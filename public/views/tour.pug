@@ -1,0 +1,52 @@
+extends layout.pug
+
+block content
+    script(async='' defer='' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBkV4ccPiSx0YvEBdvAV_L6zXlj_lTOkqw&callback=initMap' type='text/javascript')
+    script.
+        
+      /*Use fetch to send request to get specific node information*/
+     /* fetch("/getNodes/[tour_id]).then(response => populateMarkers(response))*/
+
+        //create the map
+        async function initMap() { 
+            //Render server-side js to client-side
+            var tour_data = !{tour_data}
+            //Render the map
+            let latLng = new google.maps.LatLng(41.3557, -72.0995)
+            let map = new google.maps.Map(document.getElementById('map'), {
+            //pass in center around Conn College campus
+                center: latLng,
+                zoom: 15 //zoom is set to street level
+            })
+
+            let marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                title: 'Hello World!!!'
+            })
+
+            //Send get request to server to get node objects
+            let url = '/get_nodes'
+            let options = {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({id_name: tour_data.id_name})
+            }
+            let response = await fetch(url,options)    
+        }
+
+    h1 Tour
+    if tour_data
+        h3.center Welcome to #{tour_data.display_name}
+        p.center Stops on this tour
+        div.node-list-div
+            ul.node-list
+                li 
+                    p
+                li
+                    p
+        div#map
+    else
+        h3.center Default tour page
+    
+        

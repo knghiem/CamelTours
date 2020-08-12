@@ -1,0 +1,1 @@
+![alt gazeebo](../images/gazeebo.jpg)

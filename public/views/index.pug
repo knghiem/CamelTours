@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+    h1 Home
+    p Markdown begins
+    //npm install --save jstransformer-markdown-it
+    include:markdown-it index.md
+    p Markdown done

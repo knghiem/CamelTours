@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$link-color: rgb(6,69,173);
+
+#null{
+    color: red;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+}
+
+.nav-list{
+    list-style: none;
+    display: inline;
+    margin-right: 5rem;
+    color: $link-color;
+}
+
+.node-list-div{
+    width: 40rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.node-list{
+    margin-left: 12rem;
+}
+
+.center{
+    text-align: center;
+}
+
+#map{
+    height: 30rem;
+    display: block;
+    margin: 3rem auto 0;
+    width: 50vw;
+}

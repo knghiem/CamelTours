@@ -1,0 +1,11 @@
+{
+    "tour_id":"1",
+    "name": "The Arboretum Tour",
+    "location": "New London, CT",
+    "latitude": "41.3784",
+    "longitude": "72.1091",
+    "visibility": "public",
+    "nodes": ["node1.json", "node2.json"]
+    
+
+}
